@@ -41,7 +41,7 @@ stages:
           and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
         )
     jobs:
-      - template: "jobs/function-deploy.yaml@pipelineRepo"
+      - template: "jobs/function-deploy.yaml@cicd-templates"
         parameters:
           serviceConnection: $(SERVICE_CONNECTION)
           azureSubscription: $(SUBSCRIPTION)
