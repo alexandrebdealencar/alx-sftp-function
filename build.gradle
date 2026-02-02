@@ -153,8 +153,11 @@ private excludedClassFilesForReport(classDirectories) {
 azurefunctions {
     resourceGroup = System.getenv('resourceGroup')
     appName = System.getenv('appName') ?: rootProject.name
+
     auth {
-        type = 'azure_cli'
+        type = 'publish_profile'
+        publishProfile = System.getenv('FUNCTIONAPP_PUBLISH_PROFILE')
     }
+
     localDebug = "transport=dt_socket,server=y,suspend=n,address=5005"
 }
