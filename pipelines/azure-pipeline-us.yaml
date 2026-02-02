@@ -20,6 +20,10 @@ pr:
 variables:
   - group: alx-sftp-function
 
+envs:
+  - key: FUNCTIONAPP_PUBLISH_PROFILE
+    value: $(FUNCTIONAPP_PUBLISH_PROFILE)
+
 resources:
   repositories:
     - repository: cicd-templates
