@@ -1,4 +1,4 @@
-package 'com.alx.sftp';
+package com.alx.sftp;
 
 import com.azure.core.credential.TokenCredential;
 import com.azure.identity.DefaultAzureCredentialBuilder;

@@ -1,4 +1,4 @@
-package 'com.alx.sftp';
+package com.alx.sftp;
 
 import com.microsoft.azure.functions.annotation.*;
 import com.microsoft.azure.functions.*;
