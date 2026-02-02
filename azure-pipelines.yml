@@ -22,6 +22,7 @@ steps:
   inputs:
     file: 'env.yaml'
     stage: 'dev'
+    forbiddenKeywords: 'test,tests'
 
 - task: CmdLine@2
   inputs:
