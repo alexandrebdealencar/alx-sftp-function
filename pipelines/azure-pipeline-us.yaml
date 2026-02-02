@@ -1,0 +1,50 @@
+name: $(Date:yyyyMMdd)$(Rev:.r)
+trigger:
+  branches:
+    include:
+    - main
+  paths:
+    exclude:
+      - pipelines/*
+      - .github/*
+      - docs/*
+      - README.md
+      - CHANGELOG.md
+  tags:
+    include:
+      - v*.*.*
+
+pr:
+  - none
+
+variables:
+  - group: alx-sftp-function
+
+resources:
+  repositories:
+    - repository: cicd-templates
+      type: github
+      endpoint: alexandrebdealencar
+      name: alexandrebdealencar/alx-cicd-templates
+      ref: refs/heads/main
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: stage_1
+    displayName: Deploy to Azure
+    condition: >
+        or(
+          and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main')),
+          and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/hotfix/')),
+          and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
+        )
+    jobs:
+      - template: "jobs/function-deploy.yaml@pipelineRepo"
+        parameters:
+          serviceConnection: $(SERVICE_CONNECTION)
+          azureSubscription: $(SUBSCRIPTION)
+          envs:
+            resourceGroup: alx-$(RG_NAME)
+            appName: alx-$(APP_NAME)
