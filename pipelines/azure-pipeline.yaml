@@ -31,7 +31,7 @@ steps:
 
 - task: AzAppSettingsBuilder@2
   inputs:
-    file: '$(Pipeline.Workspace)/s/env.yaml'
+    file: 'env.yaml'
     stage: 'dev'
     forbiddenKeywords: 'test,tests'
 
