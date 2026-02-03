@@ -37,4 +37,4 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: 'ls -laR'
+    script: 'pwd && ls -laR'
