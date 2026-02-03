@@ -29,7 +29,7 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-- task: AzAppSettingsBuilder@2
+- task: AppSettingsBuilder@1
   inputs:
     file: appsettings/env.yaml
     stage: 'dev'
