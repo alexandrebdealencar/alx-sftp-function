@@ -33,7 +33,7 @@ steps:
   inputs:
     file: 'env.yaml'
     stage: 'prd'
-    forbiddenKeywords: 'test,tests'
+    forbiddenKeywords: 'test,tests,qa,uat,dev'
 
 - task: CmdLine@2
   inputs:
