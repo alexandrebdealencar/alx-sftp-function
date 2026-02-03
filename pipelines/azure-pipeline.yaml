@@ -31,7 +31,7 @@ steps:
 
 - task: AzAppSettingsBuilder@2
   inputs:
-    file: 'env.yaml'
+    file: 'appsettings/env.yaml'
     stage: 'prd'
     forbiddenKeywords: 'test,tests,qa,uat,dev'
 
