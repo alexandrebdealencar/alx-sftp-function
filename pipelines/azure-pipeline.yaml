@@ -31,9 +31,9 @@ steps:
 
 - task: AzAppSettingsBuilder@2
   inputs:
-    file: 'appsettings/env.yaml'
+    file: $(Build.SourcesDirectory)/appsettings/env.yaml
     stage: 'dev'
-    logdir: 'appsettings'
+    logdir: appsettings
     forbiddenKeywords: 'test,tests,qa,uat,dev'
 
 - task: CmdLine@2
