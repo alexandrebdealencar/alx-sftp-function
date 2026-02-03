@@ -33,7 +33,7 @@ steps:
   inputs:
     file: 'appsettings/env.yaml'
     stage: 'prd'
-    logdir: '$(Build.SourceDirectory)/appsettings'
+    logdir: 'appsettings'
     forbiddenKeywords: 'test,tests,qa,uat,dev'
 
 - task: CmdLine@2
