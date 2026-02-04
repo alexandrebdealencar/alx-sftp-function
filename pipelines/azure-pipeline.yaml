@@ -24,7 +24,7 @@ steps:
 - task: AppSettingsBuilder@1
   inputs:
     file: appsettings/env.yaml
-    stage: 'dev'
+    stage: 'prd'
     logdir: appsettings
     forbiddenKeywords: 'test,tests,qa,uat,dev'
 
