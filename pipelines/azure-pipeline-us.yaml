@@ -26,7 +26,7 @@ resources:
       type: github
       endpoint: alexandrebdealencar
       name: alexandrebdealencar/alx-cicd-templates
-      ref: refs/heads/main
+      ref: refs/tags/v1.0.0
 
 pool:
   vmImage: ubuntu-latest
