@@ -26,7 +26,7 @@ resources:
       type: github
       endpoint: alexandrebdealencar
       name: alexandrebdealencar/alx-cicd-templates
-      ref: refs/tags/v1.0.0
+      ref: refs/heads/deploy-to-functionapp
 
 pool:
   vmImage: ubuntu-latest
@@ -41,10 +41,13 @@ stages:
           and(succeeded(), eq(variables['Build.Reason'], 'Manual'))
         )
     jobs:
-      - template: "jobs/function-deploy.yaml@cicd-templates"
+      - template: "jobs/deploy-to-function.yaml@cicd-templates"
         parameters:
-          serviceConnection: $(SERVICE_CONNECTION)
           azureSubscription: $(SUBSCRIPTION)
+          deployAzureServiceConnection: $(SERVICE_CONNECTION)
+          deployKeyVaultResourceGroup: $(RG_NAME)
+          deployKeyVaultName: $(KEY_VAULT)
+          deployArtifactName: appsettings
           envs:
             resourceGroup: alx-$(RG_NAME)
             appName: alx-$(APP_NAME)
