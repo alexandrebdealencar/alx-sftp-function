@@ -46,6 +46,7 @@ stages:
           azureSubscription: $(SUBSCRIPTION)
           deployAppName: alx-$(APP_NAME)
           deployAzureServiceConnection: $(SERVICE_CONNECTION)
+          deployEnvironment: $(AZURE_DEVOPS_ENVIRONMENT)
           deployKeyVaultResourceGroup: $(RG_NAME)
           deployKeyVaultName: $(KEY_VAULT)
           deployArtifactName: appsettings
