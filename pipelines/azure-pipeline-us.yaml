@@ -45,7 +45,7 @@ stages:
         parameters:
           azureSubscription: $(SUBSCRIPTION)
           deployAppName: alx-$(APP_NAME)
-          deployAzureServiceConnection: $(SERVICE_CONNECTION)
+          serviceConnection: $(SERVICE_CONNECTION)
           deployEnvironment: $(AZURE_DEVOPS_ENVIRONMENT)
           deployKeyVaultResourceGroup: $(RG_NAME)
           deployKeyVaultName: $(KEY_VAULT)
