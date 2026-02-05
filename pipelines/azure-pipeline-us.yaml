@@ -44,9 +44,9 @@ stages:
       - template: "jobs/deploy-to-function.yaml@cicd-templates"
         parameters:
           azureSubscription: $(SUBSCRIPTION)
-          deployAppName: alx-$(APP_NAME)
+          #deployAppName: alx-$(APP_NAME)
           serviceConnection: $(SERVICE_CONNECTION)
-          deployEnvironment: $(AZURE_DEVOPS_ENVIRONMENT)
+          #deployEnvironment: $(AZURE_DEVOPS_ENVIRONMENT)
           deployKeyVaultResourceGroup: $(RG_NAME)
           deployKeyVaultName: $(KEY_VAULT)
           deployArtifactName: appsettings
